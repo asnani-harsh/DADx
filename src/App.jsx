@@ -29,7 +29,7 @@ const App = () => {
       {
         user && user._id && (
           
-      <Sidebar setLoginUser={setLoginUser} />
+      <Sidebar setLoginUser={setLoginUser} user={user} />
       
             )
       }
