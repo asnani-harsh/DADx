@@ -21,13 +21,16 @@ const NavLinks = ({ handleClick }) => (
     ))}
   </div>
 );
-const Sidebar = () => {
+const Sidebar = ({setLoginUser}) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
     <>
     <div className="md:flex hidden flex-col w-[240px] py-10 px-4 bg-[#191624]">
       <img src={logo} alt="logo" className="w-full h-14 object-contain" />
+      <div className="homepage">
+      <div className="button" onClick={ () => setLoginUser({})}>Logout</div>
+      </div>
       <NavLinks />
     </div>
     <div className="absolute md:hidden block top-6 right-3">
