@@ -24,7 +24,7 @@ import { links } from '../assets/constants';
 // );
 const Sidebar = ({setLoginUser,user}) => {
   console.log({user});
-  const [open, setOpen] = useState(true);
+  const [open, setOpen] = useState(false);
 
   return (
     <>
