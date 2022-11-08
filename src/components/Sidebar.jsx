@@ -4,9 +4,10 @@ import { Link } from "react-router-dom";
 import { HiOutlineMenu } from "react-icons/hi";
 import { RiCloseLine } from "react-icons/ri";
 import { HiMenuAlt3 } from "react-icons/hi";
+import {DiYeoman} from "react-icons/di"
 import { logo } from '../assets';
 import { links } from '../assets/constants';
-
+import Profile from '../components/Profile'
 // const NavLinks = ({ handleClick }) => (
 //   <div className="mt-10">
 //     {links.map((item) => (
@@ -24,16 +25,20 @@ import { links } from '../assets/constants';
 // );
 const Sidebar = ({setLoginUser,user}) => {
   console.log({user});
-  const [open, setOpen] = useState(true);
-
+  const [open, setOpen] = useState(false);
+//  const handleclick=()=>{
+//   Profile()
+//  }
   return (
     <>
     <section className="flex gap-6"> 
+    
       <div 
         className={`bg-[#0e0e0e] min-h-screen ${ 
           open ? "w-72" : "w-16" 
         } duration-500 text-gray-100 px-4`} 
       > 
+      <img src={logo} alt="logo" className="w-full h-14 object-contain mt-10" />
         <div className="py-3 flex justify-end"> 
           <HiMenuAlt3 
             size={26} 
@@ -41,8 +46,26 @@ const Sidebar = ({setLoginUser,user}) => {
             onClick={() => setOpen(!open)} 
           /> 
         </div> 
-      
-        <div>
+         {/* ${ 
+                  !open && "opacity-0 translate-x-28 overflow-hidden" 
+                } */}
+        <div className="logout">
+            <div className="logout">
+            <h2 
+                style={{ 
+                  transitionDelay: `200ms`, 
+                }} 
+                className={`whitespace-pre duration-500 `} 
+              > 
+            {/* <DiYeoman  
+            size={26} 
+            className="cursor-pointer" 
+            // onClick={handleclick}
+            /> */}
+            <Profile user={user} setLoginUser={setLoginUser} />
+              </h2></div>
+          </div>
+        {/* <div>
         <h2 
                 style={{ 
                   transitionDelay: `200ms`, 
@@ -50,10 +73,14 @@ const Sidebar = ({setLoginUser,user}) => {
                 className={`whitespace-pre duration-500 ${ 
                   !open && "opacity-0 translate-x-28 overflow-hidden" 
                 }`} 
-              > {user?.name}
+              > <span>
+              Hello! 
+              <br />
+               {user?.name}
+              </span>
               </h2>
-              </div>
-        <div className="logout">
+              </div> */}
+        {/* <div className="logout">
             <div className="button" onClick ={() => setLoginUser({})}>
             <h2 
                 style={{ 
@@ -64,7 +91,7 @@ const Sidebar = ({setLoginUser,user}) => {
                 }`} 
               > Logout
               </h2></div>
-          </div>
+          </div> */}
         <div className="mt-4 flex flex-col gap-4 relative"> 
           {links?.map((item,i) => ( 
             <Link 
