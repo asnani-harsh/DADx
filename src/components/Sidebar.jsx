@@ -38,7 +38,7 @@ const Sidebar = ({setLoginUser,user}) => {
           open ? "w-72" : "w-16" 
         } duration-500 text-gray-100 px-4`} 
       > 
-      <img src={logo} alt="logo" className="w-full h-14 object-contain mt-10" />
+      {/* <img src={logo} alt="logo" className="w-full h-14 object-contain mt-10" /> */}
         <div className="py-3 flex justify-end"> 
           <HiMenuAlt3 
             size={26} 
