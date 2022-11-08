@@ -30,4 +30,61 @@
     border-radius: 8px;
     outline: none;
     cursor: pointer;
+    font-family: 'Outfit', sans-serif;
+    font-family: 'Poor Story', cursive;
+    margin-left: 35%;
+    margin-top: 10%;
+    width: 400px;
+    background: #fff;
+    border: 1px solid #dddfe2;
+    box-shadow: 0 2px 4px rgb(0 0 0 / 10%), 0 8px 16px rgb(0 0 0 / 10%);
+    border-radius: 8px;
+    padding: 1rem;
+    align-items: center;
+    text-align: center;
 }
+
+@media only screen and (max-width: 630px) {
+    .login {
+        font-family: 'Outfit', sans-serif;
+        font-family: 'Poor Story', cursive;
+        margin-left: 5%;
+        margin-top: 10%;
+        width: 400px;
+        background: #fff;
+        border: 1px solid #dddfe2;
+        box-shadow: 0 2px 4px rgb(0 0 0 / 10%), 0 8px 16px rgb(0 0 0 / 10%);
+        border-radius: 8px;
+        padding: 1rem;
+        align-items: center;
+        text-align: center;
+    }
+}
+
+.login>input {
+    font-family: 'Outfit', sans-serif;
+    font-family: 'Poor Story', cursive;
+    border-radius: 8px;
+    border: 2px solid #dddfe2;
+    outline: none;
+    color: #1d2129;
+    margin: 0.5rem 0;
+    padding: 0.5rem 0.75rem;
+    width: 92%;
+    font-size: 1rem;
+}
+
+.button {
+    background: #04152b;
+    border: 1px solid #7162e6;
+    color: #fff;
+    font-size: 1.25rem;
+    padding: 0.5rem;
+    margin: 0.5rem 0;
+    border-radius: 8px;
+    outline: none;
+    cursor: pointer;
+}
+
+
+/* >>>>>>>e122400c5fe2dcf783ff0cb3a57b2b0af4495a15 */

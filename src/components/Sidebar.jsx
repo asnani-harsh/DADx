@@ -26,9 +26,9 @@ import Profile from '../components/Profile'
 const Sidebar = ({setLoginUser,user}) => {
   console.log({user});
   const [open, setOpen] = useState(false);
-//  const handleclick=()=>{
-//   Profile()
-//  }
+
+
+// >>>>>>> e122400c5fe2dcf783ff0cb3a57b2b0af4495a15
   return (
     <>
     <section className="flex gap-6"> 
