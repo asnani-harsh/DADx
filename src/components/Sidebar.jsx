@@ -51,48 +51,12 @@ const Sidebar = ({setLoginUser,user}) => {
                 } */}
         <div className="logout">
             <div className="logout">
-            <h2 
-                style={{ 
-                  transitionDelay: `200ms`, 
-                }} 
-                className={`whitespace-pre duration-500 `} 
-              > 
-            {/* <DiYeoman  
-            size={26} 
-            className="cursor-pointer" 
-            // onClick={handleclick}
-            /> */}
-            <Profile user={user} setLoginUser={setLoginUser} />
-              </h2></div>
+            
+            <Profile user={user} setLoginUser={setLoginUser} open={open} />
+              </div>
           </div>
-        {/* <div>
-        <h2 
-                style={{ 
-                  transitionDelay: `200ms`, 
-                }} 
-                className={`whitespace-pre duration-500 ${ 
-                  !open && "opacity-0 translate-x-28 overflow-hidden" 
-                }`} 
-              > <span>
-              Hello! 
-              <br />
-               {user?.name}
-              </span>
-              </h2>
-              </div> */}
-        {/* <div className="logout">
-            <div className="button" onClick ={() => setLoginUser({})}>
-            <h2 
-                style={{ 
-                  transitionDelay: `200ms`, 
-                }} 
-                className={`whitespace-pre duration-500 ${ 
-                  !open && "opacity-0 translate-x-28 overflow-hidden" 
-                }`} 
-              > Logout
-              </h2></div>
-          </div> */}
-        <div className="mt-4 flex flex-col gap-4 relative"> 
+        
+        <div className="mt-0 flex flex-col gap-4 relative"> 
           {links?.map((item,i) => ( 
             <Link 
               to={item.to} 
