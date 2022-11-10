@@ -23,4 +23,5 @@ export const links = [
   { name: 'Top Artists', to: '/top-artists', icon: HiOutlineUserGroup },
   { name: 'Top Charts', to: '/top-charts', icon: HiOutlineHashtag },
   { name: 'My Playlist', to: '/my-playlist', icon: GiLoveSong },
+    { name: 'My Likes', to: '/my-likes', icon: GiLoveSong },
 ];

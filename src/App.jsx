@@ -7,6 +7,7 @@ import { ArtistDetails, TopArtists, AroundYou, Discover, Search, SongDetails, To
 import {useState} from 'react';
 import { playPause,setActiveSong,setActiveSongtozero } from './redux/features/playerSlice';  
 import { useDispatch } from 'react-redux';
+import MyLikedsongs from './pages/MyLikedsongs';
 import MyPlaylist from './pages/MyPlaylist';
 
 const App = () => {
@@ -59,6 +60,7 @@ const App = () => {
               <>
               <Route path="/top-artists" element={<TopArtists />} />
               <Route path="/my-playlist" element={<MyPlaylist user={user} setLoginUser={setLoginUser}/>} />
+              <Route path="/my-likes" element={<MyLikedsongs user={user} setLoginUser={setLoginUser}/>} />
               <Route path="/top-charts" element={<TopCharts />} />
               <Route path="/around-you" element={<AroundYou />} />
               <Route path="/artists/:id" element={<ArtistDetails />} />

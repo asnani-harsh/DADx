@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 
 import { nextSong, prevSong, playPause } from '../../redux/features/playerSlice';
 import Addtoplaylist from './Addtoplaylist';
+import Addtolikedsongs from './Addtolikedsongs';
 import Controls from './Controls';
 import Player from './Player';
 import Seekbar from './Seekbar';
@@ -89,6 +90,12 @@ const MusicPlayer = ({user, setLoginUser}) => {
           onLoadedData={(event) => setDuration(event.target.duration)}
         />
         <Addtoplaylist
+        activeSong={activeSong}
+        user={user}
+        setLoginUser={setLoginUser}
+        currentSongs={currentSongs}
+        />
+        <Addtolikedsongs
         activeSong={activeSong}
         user={user}
         setLoginUser={setLoginUser}

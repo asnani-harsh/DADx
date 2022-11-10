@@ -28,7 +28,8 @@ const userSchema = new mongoose.Schema({
     name:String,
     email:String,
     password:String,
-    playlistarr:Array
+    playlistarr:Array,
+    likedarr:Array
 })
 
 const User = new mongoose.model("User", userSchema)
@@ -58,6 +59,21 @@ app.post("/updateplaylist", async (req, res) => {
     let doc = await User.findOneAndUpdate(filter, {
         $set: {
             playlistarr: playlistarr
+        }
+    } , opts);
+    User.findOne({email: email}, (err,user) => {
+        res.send({user})
+    })
+})
+app.post("/updatelikedsongs", async (req, res) => {
+    const { email, likedarr }= req.body
+    const filter = {email: email};
+
+    // const update = {playlistarr: playlistarr};
+    const opts = { new: true };
+    let doc = await User.findOneAndUpdate(filter, {
+        $set: {
+            likedarr: likedarr
         }
     } , opts);
     User.findOne({email: email}, (err,user) => {
