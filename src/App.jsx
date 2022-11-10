@@ -26,10 +26,10 @@ const App = () => {
   if(!user && !user._id){
     dispatch(dispatch(setActiveSongtozero({})));
   }
-  console.log('hello')
-  console.log(activeSong?.title);
-  console.log('hello2')
-  console.log(user);
+  // console.log('hello')
+  // console.log(activeSong?.title);
+  // console.log('hello2')
+  // console.log(user);
   return (
     
     <div className="relative flex">

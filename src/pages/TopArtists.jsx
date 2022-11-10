@@ -1,7 +1,7 @@
 import {ArtistCard, Error, Loader } from "../components";
 import { useGetTopChartsQuery } from "../redux/services/shazamCore";
 
-const TopCharts = () => {
+const TopArtists = () => {
     const { data, isFetching, error } = useGetTopChartsQuery();
 
     
@@ -23,4 +23,4 @@ const TopCharts = () => {
     )
 }
 
-export default TopCharts;
+export default TopArtists;

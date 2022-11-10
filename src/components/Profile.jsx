@@ -21,7 +21,7 @@ function Profile({user,setLoginUser, open}) {
       >
         <DiYeoman
         size={32} 
-        className="mt-3 cursor-pointer hover:bg-gray-800 rounded-md"
+        className="mt-3 p-1 cursor-pointer hover:bg-gray-800 rounded-md"
         />
         <p style={{ 
           transitionDelay: `100ms`, 

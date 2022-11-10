@@ -74,7 +74,7 @@ function Addtoplaylist({activeSong, user, setLoginUser, currentSongs}) {
   return (
     <div>
         
-        <div className='flex-row items-center text-white cursor-pointer' onClick={handleclick} id="btn-playlist">{str}</div>
+        <div className='flex-row items-center text-white hover:bg-gray-800 rounded-md p-0.5 cursor-pointer' onClick={handleclick} id="btn-playlist">{str}</div>
         
         
     </div>

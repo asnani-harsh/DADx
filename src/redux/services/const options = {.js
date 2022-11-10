@@ -1,7 +1,7 @@
 const options = {
   method: 'GET',
   headers: {
-    'X-RapidAPI-Key': 'd09a7fca82msh64eedbb6d35bdb2p185609jsne4a6979c7f85',
+    'X-RapidAPI-Key': 'bcd7d9e63cmsh54d9a1bb11bced6p1810a8jsnd8b2858a96c8',
     'X-RapidAPI-Host': 'shazam-core.p.rapidapi.com'
   }
 };
