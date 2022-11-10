@@ -3,7 +3,6 @@ import { useSelector, useDispatch } from 'react-redux';
 
 import { nextSong, prevSong, playPause } from '../../redux/features/playerSlice';
 import Addtoplaylist from './Addtoplaylist';
-import Addtolikedsongs from './Addtolikedsongs';
 import Controls from './Controls';
 import Player from './Player';
 import Seekbar from './Seekbar';
@@ -69,7 +68,14 @@ const MusicPlayer = ({user, setLoginUser}) => {
           handlePlayPause={handlePlayPause}
           handlePrevSong={handlePrevSong}
           handleNextSong={handleNextSong}
+          activeSong={activeSong}
+          user={user}
+          setLoginUser={setLoginUser}
         />
+        {/* <Addtolikedsongs
+        
+        currentSongs={currentSongs}
+        /> */}
         <Seekbar
           value={appTime}
           min="0"
@@ -95,12 +101,7 @@ const MusicPlayer = ({user, setLoginUser}) => {
         setLoginUser={setLoginUser}
         currentSongs={currentSongs}
         />
-        <Addtolikedsongs
-        activeSong={activeSong}
-        user={user}
-        setLoginUser={setLoginUser}
-        currentSongs={currentSongs}
-        />
+        
       </div>
       <VolumeBar value={volume} min="0" max="1" onChange={(event) => setVolume(event.target.value)} setVolume={setVolume} />
     </div>
