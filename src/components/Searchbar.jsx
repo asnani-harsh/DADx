@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { FiSearch } from "react-icons/fi";
+import { FaSearchPlus } from "react-icons/fa";
 
 const Searchbar = () => {
   const navigate = useNavigate();
@@ -18,7 +18,7 @@ const Searchbar = () => {
         Search all songs
       </label>
       <div className="flex flex-row justify-start items-center">
-        <FiSearch className="w-5 h-5 ml-4" />
+        <FaSearchPlus className="w-5 h-5 ml-4" />
         <input 
           name="search-field"
           autoComplete="off"
@@ -27,7 +27,7 @@ const Searchbar = () => {
           type="search"
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
-          className="flex-1 bg-transparent border-none outline-none placeholder-gray-500 text-white p-4"
+          className="flex-1 bg-slate-300 border-none outline-none placeholder-gray-500 h-3 m-1 max-w-md rounded-md text-white p-4"
         />
       </div>
     </form>
