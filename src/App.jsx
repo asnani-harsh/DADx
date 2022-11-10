@@ -5,8 +5,9 @@ import Register from "./components/register/register"
 import { Searchbar, Sidebar, MusicPlayer, TopPlay } from './components';
 import { ArtistDetails, TopArtists, AroundYou, Discover, Search, SongDetails, TopCharts } from './pages';
 import {useState} from 'react';
-import { playPause,setActiveSong } from './redux/features/playerSlice';  
+import { playPause,setActiveSong,setActiveSongtozero } from './redux/features/playerSlice';  
 import { useDispatch } from 'react-redux';
+import MyPlaylist from './pages/MyPlaylist';
 
 const App = () => {
   const { activeSong } = useSelector((state) => state.player);
@@ -21,8 +22,13 @@ const App = () => {
   //    activeSong = {}
     
   // };
-  
-  // console.log('hello')
+  if(!user && !user._id){
+    dispatch(dispatch(setActiveSongtozero({})));
+  }
+  console.log('hello')
+  console.log(activeSong?.title);
+  console.log('hello2')
+  console.log(user);
   return (
     
     <div className="relative flex">
@@ -33,7 +39,6 @@ const App = () => {
       
             )
       }
-      {/* <div className="flex-1 flex flex-col bg-gradient-to-br from-black to-[#a7219e]"> */}
       <div className="flex-1 flex flex-col bg-gradient-to-br from-black to-[#6d1c5c]">
       {
             user && user._id && (
@@ -44,7 +49,6 @@ const App = () => {
         <div className="px-6 h-[calc(100vh-72px)] overflow-y-scroll hide-scrollbar flex xl:flex-row flex-col-reverse">
           <div className="flex-1 h-fit pb-40">
             <Routes>
-              
               <Route path="/login" element={<Login setLoginUser={setLoginUser} />} />
               <Route path="/register" element={<Register />} />
               <Route path="/" element={
@@ -54,6 +58,7 @@ const App = () => {
               user && user._id && (
               <>
               <Route path="/top-artists" element={<TopArtists />} />
+              <Route path="/my-playlist" element={<MyPlaylist user={user} setLoginUser={setLoginUser}/>} />
               <Route path="/top-charts" element={<TopCharts />} />
               <Route path="/around-you" element={<AroundYou />} />
               <Route path="/artists/:id" element={<ArtistDetails />} />
@@ -76,13 +81,12 @@ const App = () => {
       </div>
       {/* {dispatch(setActiveSong({}))} */}
       {/* dispatch(resettodefault()) */}
-      {/* {!(user) && activeSong?.title && (
-          console.log('hi there')
-      )} */}
+      {!user && user._id && activeSong?.title===undefined && (
+          dispatch(setActiveSongtozero({}))
+      )}
       {user && user._id && activeSong?.title && (
-        <div className="absolute h-28 bottom-0 left-0 right-0 flex animate-slideup bg-gradient-to-br from-black to-[#174074] backdrop-blur-lg rounded-t-3xl z-10">
-        {/* <div className="absolute h-28 bottom-0 left-0 right-0 flex animate-slideup bg-gradient-to-br from- to-[#2a2a80] backdrop-blur-lg rounded-t-3xl z-10"> */}
-          <MusicPlayer />
+        <div className="absolute h-28 bottom-0 left-0 right-0 flex animate-slideup bg-gradient-to-br from-white/10 to-[#2a2a80] backdrop-blur-lg rounded-t-3xl z-10">
+          <MusicPlayer user={user} setLoginUser={setLoginUser} />
         </div>
       )}
      

@@ -8,7 +8,7 @@ app.use(express.urlencoded())
 app.use(cors())
 
 
-const mongoUrl= "mongodb+srv://devyanshu:20205065@cluster0.fcnbita.mongodb.net/?retryWrites=true&w=majority"
+const mongoUrl= "mongodb+srv://devanshsks:gs73JPs3PNaZ3OPR@cluster0.kdvizz6.mongodb.net/?retryWrites=true&w=majority"
 
 mongoose.connect(mongoUrl, {
     useNewUrlParser: true,
@@ -27,7 +27,8 @@ mongoose.connect(mongoUrl, {
 const userSchema = new mongoose.Schema({
     name:String,
     email:String,
-    password:String
+    password:String,
+    playlistarr:Array
 })
 
 const User = new mongoose.model("User", userSchema)
@@ -48,8 +49,24 @@ app.post("/login", (req, res) => {
         }
     })
 })
+app.post("/updateplaylist", async (req, res) => {
+    const { email, playlistarr }= req.body
+    const filter = {email: email};
+
+    // const update = {playlistarr: playlistarr};
+    const opts = { new: true };
+    let doc = await User.findOneAndUpdate(filter, {
+        $set: {
+            playlistarr: playlistarr
+        }
+    } , opts);
+    User.findOne({email: email}, (err,user) => {
+        res.send({user})
+    })
+})
 app.post("/register", (req, res) => {
     const {name, email, password}= req.body
+    const playlistarr = [];
     User.findOne({email: email}, (err, user)=>{
         if(user){
             res.send({message: "User Already Registered"})
@@ -58,7 +75,8 @@ app.post("/register", (req, res) => {
             const user= new User({
                 name,
                 email,
-                password
+                password,
+                playlistarr
             })
             //error checking
             user.save(err => {
